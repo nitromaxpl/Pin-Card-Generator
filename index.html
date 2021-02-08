@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-ompatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pin Card Generator</title>
+<meta name="keywords" content="Pin Card Generator">
+<meta name="description" content="Pin Card Generator">
+<meta name="author" content="Tomasz Kowalski">
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-size: 120px; 
+        font-weight: bolder;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    button {
+        width: 90%;
+        height: 90px;
+        color: black;
+        font-size: 40px; 
+        font-weight: bolder;
+        background-color: white;        
+        border: 2px solid black;
+    }
+</style>
+</style>
+<html>
+<body>
+<p>Pin Card Generator</p>
+<p id="pin"></p>
+<button type="submit" onClick="refresh()">Renew</button>
+</body>
+</html>
+<script>
+var pin = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById("pin").innerHTML=pin;
+function refresh(){
+    window.location.reload();
+} 
+</script>

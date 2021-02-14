@@ -7,39 +7,68 @@
 <meta name="keywords" content="Pin Card Generator">
 <meta name="description" content="Pin Card Generator">
 <meta name="author" content="Tomasz Kowalski">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<link rel="stylesheet" type="text/css" href="all.css">
 </head>
-<style>
-    body {
-        background-color: black;
-        color: white;
-        font-size: 120px; 
-        font-weight: bolder;
-        text-align: center;
-        word-wrap: break-word;
-    }
-
-    button {
-        width: 90%;
-        height: 90px;
-        color: black;
-        font-size: 40px; 
-        font-weight: bolder;
-        background-color: white;        
-        border: 2px solid black;
-    }
-</style>
-</style>
 <html>
 <body>
-<p>Pin Card Generator</p>
-<p id="pin"></p>
-<button type="submit" onClick="refresh()">Renew</button>
+
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">Pin Card Generator</a>
+<div id="social">
+<a href="https://github.com/nitromaxpl/"><i class="fab fa-github fa-2x"></i></a>
+<a href="mailto:kowalskit@o2.pl"><i class="fas fa-envelope fa-2x"></i></a>
+</div>
+</nav>
+<div class="container">
+<div class="box">
+<div class="head">
+<div class="number-box">
+<button type="button" class="btn-number" onClick="setNumber(4)"><h3>4 Cyfry</h3></button>
+<button type="button" class="btn-number" onClick="setNumber(6)"><h3>6 Cyfr</h3></button>
+</div>
+<div class="pin-box">
+<button type="button" class="btn-refresh" onClick="refresh()"><i class="fas fa-random fa-2x"></i></button>
+<div id="pin"></div>
+<button type="button" class="btn-copy" onclick="copy()"><i class="fas fa-copy fa-2x"></i></button>
+</div>
+<div id="copy">
+
+</div>
+</div>
+</div>
+</div>
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Pin Card Generator &copy; <a href="https://github.com/nitromaxpl/" class="footer">Tomasz Kowalski</a></small>
+  </div>
+</footer>
 </body>
 </html>
 <script>
-var pin = Math.floor(1000 + Math.random() * 9000);
-    document.getElementById("pin").innerHTML=pin;
-function refresh(){
-    window.location.reload();
-} 
+var number = 4;
+
+function setNumber(newNumber) {
+  number = newNumber;
+  refresh();
+}
+
+function refresh() {
+  var temp = Math.pow(10, number - 1);
+  var pin = Math.floor(temp + Math.random() * (temp * 9));
+  document.getElementById("pin").innerHTML = pin;
+}
+
+refresh();
+
+function copy() {
+  var range = document.createRange();
+  range.selectNode(document.getElementById("pin"));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+}
 </script>

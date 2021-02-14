@@ -1,0 +1,75 @@
+body {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;  
+}
+
+.navbar {
+    background: #00a369;
+    font-weight: bold;
+}
+
+.box {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.head {
+    margin-top: 50%;
+}
+
+.pin-box {
+    display: flex;
+}
+
+#pin {
+    height: 50px;
+    width: 60%;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 40px;
+}
+
+.btn-copy {
+    background: #00a369;
+    height: 50px;
+    width: 20%;
+    border: 2px solid #00a369;
+    color: white;
+}
+
+.btn-refresh {
+    background: red;
+    height: 50px;
+    width: 20%;
+    border: 2px solid red;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+a.footer {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.number-box {
+    display: flex;
+}
+
+.btn-number {
+    background: orange;
+    height: 50px;
+    width: 50%;
+    border: 2px solid black;
+    color: white;
+    margin-bottom: 20px;
+}
